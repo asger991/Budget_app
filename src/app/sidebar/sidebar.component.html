@@ -1,0 +1,19 @@
+<nav>
+<ul>
+  <li>
+    <a routerLink="" [class.activated]="currentUrl == '/'">
+      <i class="material-icons">home</i>
+    </a>
+  </li>
+  <li>
+    <a routerLink="current" [class.activated]="currentUrl == '/current'">
+      <i class="material-icons">attach_money</i>
+    </a>
+  </li>
+  <li>
+    <a routerLink="overview" [class.activated]="currentUrl == '/overview'">
+      <i class="material-icons">bar_chart</i>
+    </a>
+  </li>
+</ul>
+</nav>

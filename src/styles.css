@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+
+/**********************************************
+*** GENERAL
+**********************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    color: #555;
+    font-family: 'Raleway';
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+}
+
+.right { float: right; }
+.red { color: #FF5049 !important; }
+.red-focus:focus { border: 1px solid #FF5049 !important; }
+
+/**********************************************
+*** NAV
+**********************************************/
+
+#container {
+  display: grid;
+  grid-template-columns: 70px auto;
+  height: 100%;
+}
+#container #content {
+  padding: 30px 30px;
+}
+#container #content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#container #content ul li {
+  background: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 4px;
+}
+#container #content ul li a {
+  font-size: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  color: #00a8ff;
+}
+#container #content ul li ul {
+  margin-top: 20px;
+}
+#container #content ul li ul li {
+  padding: 0;
+}
+#container #content ul li ul li a {
+  font-size: 1em;
+  font-weight: 300;
+}
