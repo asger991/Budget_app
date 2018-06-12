@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-current',
@@ -10,11 +12,14 @@ import { Router } from '@angular/router';
 
 export class CurrentComponent implements OnInit {
 
-  itemCount: number;
+  rForm: FormGroup;
+  // itemCount: number;
+  item: any;
   type: string;
   descriptoon: string;
   amount: number;
-  const arr: Data<{type: string, description: string, amount: number}> = [];
+  data = [];
+  // const arr: Data<{type: string, description: string, amount: number}> = [];
 
   // incomeList: [];
   // data:{
@@ -25,13 +30,23 @@ export class CurrentComponent implements OnInit {
   // income = [];
   // data = [];
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
 
+    this.rForm = fb.group({
+      'type' : [null, Validators.required],
+      'description' : [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(50)])],
+      'amount' : [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(10)])]
+    })
   }
 
+addItem(item) {
+  this.item = item.type;
+  this.item = item.description;
+  this.item = item.amount;
+}
 
   ngOnInit() {
-    this.itemCount = this.income.length;
+    // this.itemCount = this.income.length;
   }
 
 // addItem() {

@@ -27,15 +27,16 @@
   <div class="bottom">
     <div class="add">
       <div class="add__container">
-        <form #test method="post">
+        <form [formGroup]="rForm" (ngSubmit)="addItem(rForm.value)">
 
-          <!-- <select class="add__type">
+          <select class="add__type">
                           <option value="inc" selected>+</option>
                           <option value="exp">-</option>
-                      </select> -->
-          <input type="text" class="add__description" placeholder="Add description" [(ngModel)]="valueDescriptoon">
-          <input type="number" class="add__value" placeholder="Value" ([ngModel])="valueAmount">
-          <button type="submit" class="add__btn" (click)="addItem()"><i class="material-icons">check_circle_outline</i></button>
+                      </select>
+          <input type="text" class="add__description" placeholder="Add description" formControlName="description">
+          <input type="number" class="add__value" placeholder="Value" formControlName="amount">
+
+          <button type="submit" class="add__btn"><i class="material-icons">check_circle_outline</i></button>
         </form>
       </div>
     </div>
